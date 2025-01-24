@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -13,9 +12,7 @@ class HomePage extends StatelessWidget {
         title: const Text('modal_bottom_sheet Sample'),
         actions: const [],
       ),
-      body: const CupertinoPageScaffold(
-        child: _Body(),
-      ),
+      body: const _Body(),
     );
   }
 }
@@ -67,7 +64,7 @@ class ModalFit extends StatelessWidget {
         top: false,
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
+          children: [
             ListTile(
               title: const Text('Edit'),
               leading: const Icon(Icons.edit),
