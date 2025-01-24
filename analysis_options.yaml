@@ -1,12 +1,18 @@
+# https://pub.dev/packages/pedantic_mono
 include: package:pedantic_mono/analysis_options.yaml
 
+# カスタマイズしたLinterルール
 linter:
   rules:
-    # カスケード記法を強制しない
+    avoid_classes_with_only_static_members: false
     cascade_invocations: false
-
-    # パッケージ内のimportは相対パスで書く
+    comment_references: false
+    constant_identifier_names: true
+    library_private_types_in_public_api: false
+    one_member_abstracts: false
     prefer_relative_imports: true
+    use_setters_to_change_properties: false
+    use_string_buffers: false
 
 # see: https://github.com/rrousselGit/freezed/issues/488#issuecomment-894358980
 analyzer:
@@ -15,10 +21,10 @@ analyzer:
     - '**/*.freezed.dart'
   errors:
     invalid_annotation_target: ignore
-    one_member_abstracts: ignore
     todo: ignore
   plugins:
     - custom_lint
 
 custom_lint:
   rules:
+    - missing_provider_scope: false
